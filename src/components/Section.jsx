@@ -6,19 +6,24 @@ const Wrap = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/model-s.jpg');
+    /* background-image: url('/images/model-s.jpg'); */
+    background-image: ${props => `url("/images/${props.bgImage}")`};
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
 `;
 const ItemText = styled.div`
     padding: 15vh;
     text-align: center;
+
+    @media screen and (max-width: 400px) {
+       padding: 5vh;
+    }
 `;
 const Header1 = styled.h1`
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: 4vw;
     font-weight: 500;
     letter-spacing: 4px;
 `
@@ -36,6 +41,10 @@ const ButtonGroup = styled.div`
 
     @media screen and (max-width: 760px) {
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 400px) {
+        margin-bottom: 1rem;
     }
 `
 const LeftButton = styled.div`
@@ -69,28 +78,36 @@ const DownArrow = styled.img`
     overflow-x: hidden;
 `
 
-const Section = () => {
+const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText, downArrow}) => {
     return ( 
-        <Wrap>
+        <Wrap bgImage={backgroundImg}>
            <ItemText>
                <Header1>
-                 Model S
+                 {title}
                </Header1>
                <Header2>
-                 Order Online for Touchless Delivery
+                 {description}
                </Header2>
             </ItemText>
             <Buttons>
                 <ButtonGroup>
                     <LeftButton>
-                        Custom Order
+                        {leftBtnText}
                     </LeftButton>
-                    <RightButton>
-                        Existing Inventory
-                    </RightButton>
+                    {
+                        rightBtnText && (
+                        <RightButton>
+                            {rightBtnText}
+                        </RightButton>
+                        )
+                    }
                 </ButtonGroup>
                 <DownArrowCentered>
-                    <DownArrow src='/images/down-arrow.svg' />
+                    {
+                        downArrow && (
+                            <DownArrow src={`/images/${downArrow}`} />
+                        )
+                    }
                 </DownArrowCentered>
             </Buttons>
         </Wrap>
