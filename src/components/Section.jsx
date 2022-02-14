@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Fade } from 'react-reveal';
 
 const Wrap = styled.div`
     width: 100vw;
@@ -81,27 +82,31 @@ const DownArrow = styled.img`
 const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText, downArrow}) => {
     return ( 
         <Wrap bgImage={backgroundImg}>
-           <ItemText>
-               <Header1>
-                 {title}
-               </Header1>
-               <Header2>
-                 {description}
-               </Header2>
-            </ItemText>
+            <Fade bottom>
+            <ItemText>
+                <Header1>
+                    {title}
+                </Header1>
+                <Header2>
+                    {description}
+                </Header2>
+                </ItemText>
+            </Fade>
             <Buttons>
-                <ButtonGroup>
-                    <LeftButton>
-                        {leftBtnText}
-                    </LeftButton>
-                    {
-                        rightBtnText && (
-                        <RightButton>
-                            {rightBtnText}
-                        </RightButton>
-                        )
-                    }
-                </ButtonGroup>
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {leftBtnText}
+                        </LeftButton>
+                        {
+                            rightBtnText && (
+                            <RightButton>
+                                {rightBtnText}
+                            </RightButton>
+                            )
+                        }
+                    </ButtonGroup>
+                </Fade>
                 <DownArrowCentered>
                     {
                         downArrow && (
