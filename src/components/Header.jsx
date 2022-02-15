@@ -92,19 +92,19 @@ const Header = ({ handleClick, burgerStatus }) => {
 
     return ( 
         <Container>
-            <a>
+            <a href='http://localhost:3000/'>
                 <img src="/images/logo.svg" alt="Logo" />
             </a>
             <Menu>
                 {
                     cars && cars.map((car, index) => (
-                        <a key={index} href='#'>{car}</a>
+                        <a key={index} href='http://localhost:3000/'>{car}</a>
                     ))
                 }
             </Menu>
             <RightMenu>
-                <a href="#">Shop</a>
-                <a href="#">Account</a>
+                <a href='http://localhost:3000/'>Shop</a>
+                <a href='http://localhost:3000/'>Account</a>
                 <CustomMenu onClick={handleClick} />
             </RightMenu>
             <BurgerNav show={burgerStatus}>
@@ -113,23 +113,23 @@ const Header = ({ handleClick, burgerStatus }) => {
                 </CloseWrapper>
                 {
                     cars && cars.map((car, index) => (
-                        <li key={index}><a href="#">{car}</a></li>
+                        <li key={index}><a href="http://localhost:3000/">{car}</a></li>
                     ))
                 }
-                <li><a href="#">Existing Inventory</a></li>
-                <li><a href="#">Used Inventory</a></li>
-                <li><a href="#">Trade-In</a></li>
-                <li><a href="#">Test Drive</a></li>
-                <li><a href="#">Cybertruck</a></li>
-                <li><a href="#">Roadster</a></li>
-                <li><a href="#">Semi</a></li>
-                <li><a href="#">Charging</a></li>
-                <li><a href="#">Powerwall</a></li>
-                <li><a href="#">Commercial Energy</a></li>
-                <li><a href="#">Utilities</a></li>
-                <li><a href="#">Find Us</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Investor Relations</a></li>
+                <li><a href="http://localhost:3000/">Existing Inventory</a></li>
+                <li><a href="http://localhost:3000/">Used Inventory</a></li>
+                <li><a href="http://localhost:3000/">Trade-In</a></li>
+                <li><a href="http://localhost:3000/">Test Drive</a></li>
+                <li><a href="http://localhost:3000/">Cybertruck</a></li>
+                <li><a href="http://localhost:3000/">Roadster</a></li>
+                <li><a href="http://localhost:3000/">Semi</a></li>
+                <li><a href="http://localhost:3000/">Charging</a></li>
+                <li><a href="http://localhost:3000/">Powerwall</a></li>
+                <li><a href="http://localhost:3000/">Commercial Energy</a></li>
+                <li><a href="http://localhost:3000/">Utilities</a></li>
+                <li><a href="http://localhost:3000/">Find Us</a></li>
+                <li><a href="http://localhost:3000/">Support</a></li>
+                <li><a href="http://localhost:3000/">Investor Relations</a></li>
             </BurgerNav>
         </Container>
      );
