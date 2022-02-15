@@ -3,13 +3,14 @@ import Section from './Section';
 
 const Container = styled.div`
     height: 100vh;
+    overflow: ${(props) => props.hideScrollbar && 'hidden'};
 `;
 
 
-const Home = () => {
+const Home = ({ burgerStatus }) => {
     return ( 
         <div>
-           <Container>
+           <Container hideScrollbar={burgerStatus}>
                <Section
                     title='Model S'
                     description='Order Online for Touchless Delivery'

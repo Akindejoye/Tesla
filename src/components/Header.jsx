@@ -61,7 +61,7 @@ const BurgerNav = styled.div`
     text-align: start;
     min-height: 100vh;
     overflow-y: auto;
-    transform: ${props => props.show ? 'translateY(0)': 'translateY(-100%)'};
+    transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
     transition: transform 0.5s ease-in;
 
     li {
@@ -84,8 +84,8 @@ const CustomClose = styled(CloseIcon)`
     `
 
 
-const Header = () => {
-    const [burgerStatus, setBurgerStatus] = useState(false);
+const Header = ({ handleClick, burgerStatus }) => {
+    // const [burgerStatus, setBurgerStatus] = useState(false);
 
     return ( 
         <Container>
@@ -101,11 +101,11 @@ const Header = () => {
             <RightMenu>
                 <a href="#">Shop</a>
                 <a href="#">Account</a>
-                <CustomMenu onClick={() => setBurgerStatus(true)} />
+                <CustomMenu onClick={handleClick} />
             </RightMenu>
             <BurgerNav show={burgerStatus}>
                 <CloseWrapper>
-                    <CustomClose onClick={() => setBurgerStatus(false)} />
+                    <CustomClose onClick={handleClick} />
                 </CloseWrapper>
                 <li><a href="#">Existing Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
