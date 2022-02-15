@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import { useState } from 'react';
+import { selectCars } from '../features/car/carSlice';
+import { useSelector } from 'react-redux';
 
 const Container = styled.div`
     min-height: 6rem;
@@ -81,11 +82,13 @@ const CloseWrapper = styled.div`
 const CustomClose = styled(CloseIcon)`
     cursor: pointer;
     font-size: 3rem !important;
-    `
+    margin-right: 7px;
+`
 
 
 const Header = ({ handleClick, burgerStatus }) => {
-    // const [burgerStatus, setBurgerStatus] = useState(false);
+
+    const cars = useSelector(selectCars);
 
     return ( 
         <Container>
@@ -93,10 +96,11 @@ const Header = ({ handleClick, burgerStatus }) => {
                 <img src="/images/logo.svg" alt="Logo" />
             </a>
             <Menu>
-                <a href="#">Model S</a>
-                <a href="#">Model 3</a>
-                <a href="#">Model X</a>
-                <a href="#">Model Y</a>
+                {
+                    cars && cars.map((car, index) => (
+                        <a key={index} href='#'>{car}</a>
+                    ))
+                }
             </Menu>
             <RightMenu>
                 <a href="#">Shop</a>
@@ -107,6 +111,11 @@ const Header = ({ handleClick, burgerStatus }) => {
                 <CloseWrapper>
                     <CustomClose onClick={handleClick} />
                 </CloseWrapper>
+                {
+                    cars && cars.map((car, index) => (
+                        <li key={index}><a href="#">{car}</a></li>
+                    ))
+                }
                 <li><a href="#">Existing Inventory</a></li>
                 <li><a href="#">Used Inventory</a></li>
                 <li><a href="#">Trade-In</a></li>

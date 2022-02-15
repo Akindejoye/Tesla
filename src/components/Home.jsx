@@ -3,7 +3,7 @@ import Section from './Section';
 
 const Container = styled.div`
     height: 100vh;
-    overflow: ${(props) => props.hideScrollbar && 'hidden'};
+    overflow-y: ${(props) => props.hideScrollbar && 'hidden'};
 `;
 
 

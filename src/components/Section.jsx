@@ -13,13 +13,15 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
 `;
 const ItemText = styled.div`
     padding: 15vh;
     text-align: center;
 
     @media screen and (max-width: 400px) {
-       padding: 5vh;
+       /* padding: 5vh; */
+       min-width: 100vw;
     }
 `;
 const Header1 = styled.h1`
@@ -27,11 +29,27 @@ const Header1 = styled.h1`
     font-size: 4vw;
     font-weight: 500;
     letter-spacing: 4px;
+    /* color: transparent;
+    text-shadow: 0 0 7px black; */
+
+    @media screen and (max-width: 420px) {
+        
+        font-size: 4rem;
+        font-weight: 400;
+        min-width: 100vw;
+        padding-bottom: 1rem;
+    }
 `
 const Header2 = styled.p`
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 2px;
+
+    @media screen and (max-width: 420px) {
+        
+        font-size: 1.5rem;
+        min-width: 100vw;
+    }
 `
 const Buttons = styled.div`
 `;
