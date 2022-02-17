@@ -101,13 +101,13 @@ const Section = ({ title, description, backgroundImg, leftBtnText, rightBtnText,
     return ( 
         <Wrap bgImage={backgroundImg}>
             <Fade bottom>
-            <ItemText>
-                <Header1>
-                    {title}
-                </Header1>
-                <Header2>
-                    {description}
-                </Header2>
+                <ItemText>
+                    <Header1>
+                        {title}
+                    </Header1>
+                    <Header2>
+                        {description}
+                    </Header2>
                 </ItemText>
             </Fade>
             <Buttons>
